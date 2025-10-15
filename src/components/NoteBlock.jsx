@@ -1,20 +1,6 @@
 import React from "react";
 import "./NoteBlock.css";
 
-// export default function NoteBlock({ note, onDelete }) {
-//   return (
-//     <div className="note-block">
-//       <div className="note-header">
-//         <h3>{note.title}</h3>
-//         <button onClick={() => onDelete(note.id)} className="delete-btn" aria-label="Delete Note">
-//           🗑️
-//         </button>
-//       </div>
-//       <p>{note.content}</p>
-//     </div>
-//   );
-// }
-
 export default function NoteBlock({ note, onDelete, onClick }) {
   return (
     <div className="note-block" onClick={onClick} style={{cursor:"pointer"}}>
