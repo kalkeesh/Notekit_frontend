@@ -1,20 +1,12 @@
 .note-block {
-  background: #f8f8f8;
-  border-radius: 8px;
-  padding: 12px;
-  box-shadow: 0 0 3px #ccc;
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 7px rgba(0,0,0,0.1);
+  transition: transform 0.15s ease-in-out, box-shadow 0.2s;
 }
 
-.note-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.delete-btn {
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  font-size: 18px;
+.note-block:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }

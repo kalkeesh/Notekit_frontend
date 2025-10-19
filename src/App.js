@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import NoteBlock from "./components/NoteBlock";
-import './App.css';
 import NoteEditor from "./components/NoteEditor";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import './App.css';
 
 function App() {
   const [notes, setNotes] = useState([]);
+  const [showForm, setShowForm] = useState(false);
+  const [editingNote, setEditingNote] = useState(null);
 
-  // Fetch notes from backend
   useEffect(() => {
     async function fetchNotes() {
       try {
@@ -21,7 +23,7 @@ function App() {
     fetchNotes();
   }, []);
 
-    async function createNote(note) {
+  async function createNote(note) {
     try {
       const response = await axios.post("https://notekit-backend-pnlk.onrender.com/api/notes", note);
       setNotes(prev => [...prev, response.data]);
@@ -39,23 +41,18 @@ function App() {
     }
   }
 
-  // Delete note from backend and then update state
   async function deleteNote(id) {
     try {
       await axios.delete(`https://notekit-backend-pnlk.onrender.com/api/notes/${id}`);
-      setNotes((prevNotes) => prevNotes.filter((note) => note.id !== id));
+      setNotes(prevNotes => prevNotes.filter(note => note.id !== id));
     } catch (error) {
       console.error("Error deleting note:", error);
     }
   }
-  const [showForm, setShowForm] = useState(false);
-  const [editingNote, setEditingNote] = useState(null);
 
-   if (editingNote || showForm) {
-    // Show the editor page instead of notes list
+  if (editingNote || showForm) {
     return (
-      <div className="editor-page">
-        <h2>{editingNote ? "Edit Note" : "Add Note"}</h2>
+      <div className="editor-page bg-light vh-100">
         <NoteEditor
           note={editingNote}
           onCancel={() => {
@@ -76,12 +73,14 @@ function App() {
     );
   }
 
-  // Normal notes list page
   return (
-    <div className="app-container">
-      <h1 className="title-header">
-      <span role="img" aria-label="notepad">📝</span> NoteKit
-      </h1>
+    <div className="app-container container py-4">
+      <div className="d-flex justify-content-center align-items-center mb-4">
+        <i className="bi bi-journal-text text-primary fs-2 me-2"></i>
+        <h1 className="fw-bold m-0 text-primary">NoteKit</h1>
+      </div>
+
+      {/* Volatile notes grid */}
       <div className="notes-grid">
         {notes.map((note) => (
           <NoteBlock
@@ -92,8 +91,17 @@ function App() {
           />
         ))}
       </div>
-      <button className="fab" onClick={() => setShowForm(true)} aria-label="Add Note">
-        +
+
+
+
+
+
+      <button 
+        className="btn btn-primary rounded-circle position-fixed d-flex justify-content-center align-items-center shadow fab"
+        onClick={() => setShowForm(true)}
+        aria-label="Add Note"
+      >
+        <i className="bi bi-plus-lg fs-3 text-white"></i>
       </button>
     </div>
   );

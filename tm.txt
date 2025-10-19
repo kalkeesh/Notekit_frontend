@@ -1,0 +1,68 @@
+belongs at app.css  - placed at NoteEditor.css
+
+/* noteEditor css */
+/* .fullpage-editor {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #ffffff;
+  padding: 40px 20px 80px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: Arial, sans-serif;
+  z-index: 100;
+}
+
+.cancel-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 28px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #555;
+}
+
+.title-input {
+  font-size: 24px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-weight: bold;
+  outline: none;
+}
+
+.content-input {
+  flex-grow: 1;
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  outline: none;
+  font-family: inherit;
+}
+
+.save-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #2c7be5;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(44, 123, 229, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.save-btn:hover {
+  background-color: #1a5edb;
+} */
+ 
