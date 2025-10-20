@@ -5,31 +5,29 @@ body {
 .app-container {
   max-width: 700px;
   margin: 0 auto;
-  padding-bottom: 100px; /* space for FAB */
+  padding-bottom: 100px; 
 }
 
-/* Masonry layout */
 .notes-grid {
-  column-count: 2;      /* 2 columns on all screens */
+  column-count: 2;      
   column-gap: 12px;
 }
 
 @media (max-width: 576px) {
   .notes-grid {
-    column-count: 2; /* still 2 columns on mobile */
+    column-count: 2; 
   }
 }
 
-/* Make each note block fit column */
 .note-block {
-  display: inline-block;  /* required for CSS columns */
+  display: inline-block; 
   width: 100%;
   margin-bottom: 12px;
   background: white;
   border-radius: 12px;
   padding: 16px;
   box-shadow: 0 1px 7px rgba(0,0,0,0.1);
-  break-inside: avoid;   /* prevent breaking across columns */
+  break-inside: avoid;  
   transition: transform 0.15s ease-in-out, box-shadow 0.2s;
 }
 
@@ -38,7 +36,6 @@ body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* FAB styling */
 .fab {
   bottom: 24px;
   right: 24px;
