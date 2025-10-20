@@ -1,4 +1,4 @@
-.note-block {
+/* .note-block {
   background: white;
   border-radius: 12px;
   padding: 16px;
@@ -9,4 +9,31 @@
 .note-block:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-} 
+}  */
+
+/* NoteBlock.css */
+.note-block {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 12px;
+  background-color: #f8eded !important; /* dark grey */
+  color: rgb(210, 12, 12) !important;             /* text color */
+  border-radius: 12px !important;
+  padding: 16px !important;
+  box-shadow: 0 1px 7px rgba(0,0,0,0.1) !important;
+  break-inside: avoid;
+  transition: transform 0.15s ease-in-out, box-shadow 0.2s;
+}
+
+.note-block:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(245, 237, 237, 0.15);
+}
+
+.note-block .note-header h5 {
+  color: rgb(21, 18, 18) !important;
+}
+
+.note-block p {
+  color: #080505 !important;
+}

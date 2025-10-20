@@ -20,7 +20,11 @@ export default function NoteBlock({ note, onDelete, onClick }) {
           <i className="bi bi-trash3"></i>
         </button>
       </div>
-      <p className="text-muted small mt-2">{note.content}</p>
+      {/* <p className="text-muted small mt-2">{note.content}</p> */}
+      <p className="text-muted small mt-2" style={{ whiteSpace: "pre-wrap" }}>
+  {note.content}
+</p>
+
     </div>
   );
 }
