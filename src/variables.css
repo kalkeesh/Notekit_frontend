@@ -1,0 +1,43 @@
+:root {
+  /* Fonts */
+  --font-title: 'Poppins', sans-serif;
+  --font-text: 'Roboto', sans-serif;
+
+  /* Light theme colors */
+  --color-bg-light: #f7f9fc;
+  --color-note-bg-light: #fcfbfb;
+  --color-note-text-light: #0a0808;
+  --color-note-border-light: #070505;
+  --color-text-light: #050505;
+  --color-primary-light: #0d6efd;
+  --color-primary-hover-light: #0b5ed7;
+
+  /* Dark theme colors */
+  --color-bg-dark: #1c1c1c;
+  --color-note-bg-dark: #0b0909;
+  --color-note-text-dark: #f1f1f1;
+  --color-note-border-dark: #555555;
+  --color-text-dark: #e5e5e5;
+  --color-primary-dark: #0d6efd;
+  --color-primary-hover-dark: #0b5ed7;
+}
+
+body.light {
+  --color-bg: var(--color-bg-light);
+  --color-note-bg: var(--color-note-bg-light);
+  --color-note-text: var(--color-note-text-light);
+  --color-note-border: var(--color-note-border-light);
+  --color-text: var(--color-text-light);
+  --color-primary: var(--color-primary-light);
+  --color-primary-hover: var(--color-primary-hover-light);
+}
+
+body.dark {
+  --color-bg: var(--color-bg-dark);
+  --color-note-bg: var(--color-note-bg-dark);
+  --color-note-text: var(--color-note-text-dark);
+  --color-note-border: var(--color-note-border-dark);
+  --color-text: var(--color-text-dark);
+  --color-primary: var(--color-primary-dark);
+  --color-primary-hover: var(--color-primary-hover-dark);
+}

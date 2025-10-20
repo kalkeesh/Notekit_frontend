@@ -1,23 +1,39 @@
-/* .note-block {
-  background: white;
-  border-radius: 12px;
-  padding: 16px;
-  box-shadow: 0 1px 7px rgba(0,0,0,0.1);
-  transition: transform 0.15s ease-in-out, box-shadow 0.2s;
-}
+@import '../variables.css';
 
-.note-block:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}  */
-
-/* NoteBlock.css */
 .note-block {
   display: inline-block;
   width: 100%;
   margin-bottom: 12px;
-  background-color: #f8eded !important; /* dark grey */
-  color: rgb(210, 12, 12) !important;             /* text color */
+  background-color: var(--color-note-bg) !important ;
+  color: var(--color-note-text) !important ;
+  border-radius: 12px  !important;
+  padding: 16px !important;
+  box-shadow: 0 1px 7px rgba(0,0,0,0.1) !important;
+  break-inside: avoid;
+  transition: transform 0.15s ease-in-out, box-shadow 0.2s, background-color 0.3s, color 0.3s;
+  font-family: var(--font-text);
+}
+
+.note-block:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15) ;
+}
+
+.note-block .note-header h5 {
+  color: var(--color-text) !important;
+  font-family: var(--font-title)  !important;
+}
+
+.note-block p {
+  color: var(--color-text)  !important;
+}
+
+/* .note-block {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 12px;
+  background-color: #f8eded !important;
+  color: rgb(210, 12, 12) !important;            
   border-radius: 12px !important;
   padding: 16px !important;
   box-shadow: 0 1px 7px rgba(0,0,0,0.1) !important;
@@ -36,4 +52,4 @@
 
 .note-block p {
   color: #080505 !important;
-}
+} */
