@@ -29,10 +29,9 @@ const ResetPassword = () => {
             alert('An error occurred. Please try again.');
         }
     };
-
+// style={{ backgroundImage: 'url("/imac wallaper.jpg")' }}
     return (
-        <div className="reset-password-container"
-        style={{ backgroundImage: 'url("/imac wallaper.jpg")' }}>
+        <div className="reset-password-container">
             <form className="reset-password-form" onSubmit={handleSubmit}>
                 <h2>Reset Password</h2>
                 <input

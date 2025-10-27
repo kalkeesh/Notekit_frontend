@@ -12,8 +12,8 @@ const SignIn = () => {
     confirmPassword: ''
   });
 
-  const navigate = useNavigate();
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
@@ -69,56 +69,26 @@ const SignIn = () => {
   };
 
   return (
-    <div className="signin-container">
-      <div className="welcome-section">
-        <div className="circles">
-          <div className="circle"></div>
-          <div className="circle"></div>
-        </div>
-        <div className="welcome-content">
-          <h1 className="welcome-title">Welcome Back!</h1>
-          <p className="welcome-subtitle">
-            Let's create something extraordinary together. Your journey with us continues here.
-          </p>
-          <div className="welcome-features">
-            <div className="feature-item">
-              <div className="feature-icon">🤝</div>
-              <span>Join our thriving community of innovators</span>
-            </div>
-            <div className="feature-item">
-              <div className="feature-icon">💡</div>
-              <span>Access exclusive collaboration tools</span>
-            </div>
-            <div className="feature-item">
-              <div className="feature-icon">🚀</div>
-              <span>Transform ideas into reality</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="form-section">
-        <form className="signin-form" onSubmit={handleSubmit}>
-          <h2>Sign Up</h2>
-
+    <div className="signup-container">
+      <div className="signup-card">
+        <h2>Create Account</h2>
+        <form onSubmit={handleSubmit}>
           <input
             type="text"
             name="name"
-            placeholder="Name"
+            placeholder="Full Name"
             value={formData.name}
             onChange={handleChange}
             required
-            className="input-white"
           />
 
           <input
             type="email"
             name="email"
-            placeholder="Email"
+            placeholder="Email Address"
             value={formData.email}
             onChange={handleChange}
             required
-            className="input-white"
           />
           {errors.email && <p className="error-message">{errors.email}</p>}
 
@@ -129,7 +99,6 @@ const SignIn = () => {
             value={formData.phoneNumber}
             onChange={handleChange}
             required
-            className="input-white"
           />
 
           <input
@@ -139,7 +108,6 @@ const SignIn = () => {
             value={formData.password}
             onChange={handleChange}
             required
-            className="input-white"
           />
           {errors.password && <p className="error-message">{errors.password}</p>}
 
@@ -150,14 +118,17 @@ const SignIn = () => {
             value={formData.confirmPassword}
             onChange={handleChange}
             required
-            className="input-white"
           />
-          {errors.confirmPassword && <p className="error-message">{errors.confirmPassword}</p>}
+          {errors.confirmPassword && (
+            <p className="error-message">{errors.confirmPassword}</p>
+          )}
 
-          <button type="submit">Sign Up</button>
+          <button type="submit" className="signup-btn">
+            Sign Up
+          </button>
 
-          <div className="login-option">
-            <span>Already have an account? <a href="/login">Login here</a></span>
+          <div className="login-link">
+            <span>Already have an account? <a href="/login">Login</a></span>
           </div>
         </form>
       </div>

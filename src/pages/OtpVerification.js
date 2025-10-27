@@ -60,11 +60,9 @@ const OtpVerification = () => {
         const secs = seconds % 60;
         return `${minutes}:${secs < 10 ? '0' : ''}${secs}`;
     };
-
+//   style={{ backgroundImage: 'url("/forgot.jpg")' }}
     return (
-        <div className="otp-verification-container"
-        style={{ backgroundImage: 'url("/forgot.jpg")' }}>
-
+        <div className="otp-verification-container">
             <form className="otp-verification-form" onSubmit={handleSubmit}>
                 <h2>OTP Verification</h2>
                 <input

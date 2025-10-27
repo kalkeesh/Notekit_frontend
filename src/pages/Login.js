@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './Login.css';
 
 function Login() {
@@ -26,13 +27,12 @@ function Login() {
         const { token, name } = response.data;
         localStorage.setItem('authToken', token);
         localStorage.setItem('username', name || '');
-        
         navigate('/');
       }
     } catch (error) {
       if (error.response) {
         if (error.response.status === 401) {
-          alert(error.response.data.detail || error.response.data.message || 'Invalid credentials');
+          alert(error.response.data.detail || 'Invalid credentials');
         } else {
           alert('An error occurred during login. Please try again.');
         }
@@ -44,30 +44,47 @@ function Login() {
   };
 
   return (
-    <div className="login-page" style={{ backgroundImage: 'url("/bg.jpg")' }}>
-      <div className="login-container">
-        <h2>Login</h2>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            onChange={handleChange}
-            required
-            className="input-white"
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            onChange={handleChange}
-            required
-            className="input-white"
-          />
-          <button type="submit">Login</button>
-        </form>
-        <Link to={`/forgot-password?email=${formData.email}`}>Forgot Password?</Link>
-        <span>Don't have an account? <a href="/signin">Sign Up</a></span>
+    <div className="container d-flex justify-content-center align-items-center min-vh-100">
+      <div className="card-container">
+        <div className="card">
+          <div className="card-body p-5">
+            <h2 className="card-title text-center mb-4">Login</h2>
+            <form onSubmit={handleSubmit}>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                className="form-control mb-4"
+                required
+              />
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                value={formData.password}
+                onChange={handleChange}
+                className="form-control mb-3"
+                required
+              />
+
+              <div className="text-end mb-3">
+                <Link to={`/forgot-password?email=${formData.email}`} className="small-link">
+                  Forgot Password?
+                </Link>
+              </div>
+
+              <button type="submit" className="btn btn-primary w-100 mt-2">
+                Login
+              </button>
+            </form>
+
+            <div className="text-center mt-4">
+              <span>Don't have an account? <Link to="/signin" className="small-link">Register</Link></span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
