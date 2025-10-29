@@ -43,3 +43,65 @@ body {
   right: 20px;
   z-index: 200;
 }
+
+/* =====================================
+   NAVBAR (Light + Dark Theme Compatible)
+   ===================================== */
+.custom-navbar {
+  background-color: var(--color-navbar-bg);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  padding: 0.6rem 1rem;
+}
+
+.custom-navbar .navbar-brand {
+  color: var(--color-accent);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.custom-navbar .navbar-brand:hover {
+  color: var(--color-accent-hover);
+  text-decoration: none;
+}
+
+.custom-navbar .nav-link {
+  color: var(--color-text);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover {
+  color: var(--color-accent);
+}
+
+.custom-navbar .btn-logout {
+  background-color: transparent;
+  border: 1.8px solid var(--color-accent);
+  color: var(--color-accent);
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 4px 12px;
+  transition: all 0.3s ease;
+}
+
+.custom-navbar .btn-logout:hover {
+  background-color: var(--color-accent);
+  color: var(--color-navbar-bg);
+}
+
+/* Toggler icon color fix for dark mode */
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  filter: invert(var(--toggler-filter));
+}

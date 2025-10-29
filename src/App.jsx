@@ -5,6 +5,7 @@ import NoteEditor from "./components/NoteEditor";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './App.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 function App() {
   const [notes, setNotes] = useState([]);
